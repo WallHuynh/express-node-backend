@@ -1,0 +1,33 @@
+body {
+    background-color: teal;
+  }
+  .dotrang {
+    background-color: rgba(232, 18, 54, 0.796);
+    color: white;
+  }
+
+  .text {
+    font-size: 20px;
+    margin-left: 350px;
+  }
+  div.chinh {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  img {
+    border-radius: 0 50px 0 50px;
+    width: 200px;
+    height: 350px;
+    margin-bottom: -390px;
+    margin-left: 140px;
+  }
+  ul {
+    margin-top: -20px;
+    margin-bottom: 30px;
+  }
+  p {
+    margin-top: 30px;
+  }
+  a {
+    margin-left: 50px;
+  }

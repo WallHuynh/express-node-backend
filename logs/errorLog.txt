@@ -4,3 +4,8 @@
 20220402	15:01:43	244ecbfb-c1d2-47d3-a344-528d165dbd8d	TypeError	fsPromises.readFil is not a function
 20220402	15:02:04	4e1150b7-cbe9-4dbf-985a-231fa8b14876	TypeError	fsPromises.readFil is not a function
 20220402	15:10:07	bc443755-c3bd-4c2f-b500-1da4df7368b3	TypeError:filePath.include is not a function
+20220403	20:19:00	032bf37e-ee7d-4f6a-bf68-d25cc791d4f7	Error: not allow by CORS
+20220404	10:25:09	09d24f15-57f4-47d7-af9a-6fd1784d01f0	ReferenceError: __dirname is not defined
+20220404	10:25:18	963be687-f63a-4faf-9bd0-47a5ff36f3fa	ReferenceError: __dirname is not defined
+20220404	21:22:52	8be77b87-9016-4db9-9465-68e5ad321451	Error: Cannot set headers after they are sent to the client
+20220404	21:46:05	2049e44b-c710-4cc8-b6d6-ede2d4407218	ReferenceError: setEmployee is not defined

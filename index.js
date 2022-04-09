@@ -5,8 +5,17 @@ import { rootRouter } from './routes/root.js'
 import { employeesRouter } from './routes/api/employees.js'
 import { registerRouter } from './routes/register.js'
 import { authRouter } from './routes/auth.js'
+import { refreshRouter } from './routes/refresh.js'
+import { logOutRouter } from './routes/logout.js'
 import cors from 'cors'
 import { corsOptions } from './config/corsOptions.js'
+import { verifyJWT } from './middleware/verifyJWT.js'
+import cookieParser from 'cookie-parser'
+import { credentials } from './middleware/credentials.js'
+import mongoose from 'mongoose'
+import { connectDB } from './config/dbconn.js'
+import dotenv from 'dotenv'
+dotenv.config()
 
 //initialize app with express
 const app = express()
@@ -17,10 +26,17 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const port = process.env.PORT || 6996
+const port = process.env.PORT || 9669
+
+// connect mongoDB
+connectDB()
 
 //custom middleware logger
 app.use(logger)
+
+//Handle option credentials check - before Cors
+//and fetch cookies credentials requirement
+app.use(credentials)
 
 // Cross Origin Resourse Sharing
 app.use(cors(corsOptions))
@@ -32,6 +48,9 @@ app.use(express.urlencoded({ extended: false }))
 // build-in middleware for json encode
 app.use(express.json())
 
+//add middleware for cookie
+app.use(cookieParser())
+
 //public server files
 app.use('/', express.static(path.join(__dirname, '/public')))
 
@@ -39,6 +58,10 @@ app.use('/', express.static(path.join(__dirname, '/public')))
 app.use('/', rootRouter)
 app.use('/register', registerRouter)
 app.use('/auth', authRouter)
+app.use('/refresh', refreshRouter)
+app.use('/logout', logOutRouter)
+
+app.use(verifyJWT)
 app.use('/employees', employeesRouter)
 
 //handle 404
@@ -55,4 +78,7 @@ app.all('*', (req, res) => {
 app.use(errorHandler)
 
 //initialize host
-app.listen(port, () => console.log(`host run port:${port}`))
+mongoose.connection.once('open', () => {
+  console.log('Connected to mongoDb')
+  app.listen(port, () => console.log(`host run on port:${port}`))
+})

@@ -1,12 +1,14 @@
+import bcrypt from 'bcrypt'
+import User from '../model/User.js'
+
 //initial __dirname, __filename in ES6 module
 import path from 'path'
 import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-import bcrypt from 'bcrypt'
+// initial json file data with es6
 import fsPromise from 'fs/promises'
-
 const json = JSON.parse(
   await fsPromise.readFile(new URL('../model/users.json', import.meta.url))
 )
@@ -23,19 +25,17 @@ const handleNewUser = async (req, res) => {
     return res
       .status(400)
       .json({ message: 'username and password are required' })
-  const duplicate = userDB.users.find(person => person.username === user)
+  const duplicate = await User.findOne({ username: user }).exec()
   if (duplicate) return res.sendStatus(409) //conflict
   try {
     //encrypt the password
     const hashedPwd = await bcrypt.hash(pwd, 10)
     //store the new user
-    const newUser = { username: user, password: hashedPwd }
-    userDB.setUsers([...userDB.users, newUser])
-    await fsPromise.writeFile(
-      path.join(__dirname, '..', 'model', 'users.json'),
-      JSON.stringify(userDB.users)
-    )
-    console.log(userDB.users)
+    const result = await User.create({
+      username: user,
+      password: hashedPwd,
+    })
+    console.log(result)
     res.status(201).json({ success: `New user ${user} created` })
   } catch (err) {
     res.status(500).json({ error: err.message })

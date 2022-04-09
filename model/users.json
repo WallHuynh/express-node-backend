@@ -1,6 +1,20 @@
 [
   {
-    "username": "phuctuong",
-    "password": "$2b$10$QhiQM/AD1dJvmft7cL8t6.ASHsTlz9V90Srhzhe2d1OKjiTecj6VK"
+    "username": "tuong",
+    "roles": { "User": 2001, "Editor": 1984 },
+    "password": "$2b$10$3PFRk19fhnVfccNBkksyVe6FXwKy7klB./NrSNmFxyUKTjg4XV0Sa",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR1b25nIiwiaWF0IjoxNjQ5MzM3Mzk1LCJleHAiOjE2NDk0MjM3OTV9.h5Wmk0QJ24PJtg276Gn9pLm_tIZ6rt7KZJeKprdf-PQ"
+  },
+  {
+    "username": "pwall",
+    "roles": { "User": 2001 },
+    "password": "$2b$10$.JhfEt5caoANX09LCwTZPulsplHzD.OBcqqeZFQ7AOJJz8BtgQJyC",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InB3YWxsIiwiaWF0IjoxNjQ5MzM3NTg0LCJleHAiOjE2NDk0MjM5ODR9.qWVMtZU5xCJBCIjrIGN6LFMPGXDwtm562-jMvoPn5ik"
+  },
+  {
+    "username": "wall",
+    "roles": { "User": 2001, "Editor": 1984, "Admin": 5150 },
+    "password": "$2b$10$YIY4FA8zlsjnEsutyBSVYemEZb2Pp.olawM5O4O8KtWPZ27Krh7zm",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbGwiLCJpYXQiOjE2NDkzMzc2ODcsImV4cCI6MTY0OTQyNDA4N30.g0z0_vr0eM4u2Yvb_II7ZFYpQFZ5GGLK2hALQx3opMg"
   }
 ]

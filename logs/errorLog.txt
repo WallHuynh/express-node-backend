@@ -9,3 +9,14 @@
 20220404	10:25:18	963be687-f63a-4faf-9bd0-47a5ff36f3fa	ReferenceError: __dirname is not defined
 20220404	21:22:52	8be77b87-9016-4db9-9465-68e5ad321451	Error: Cannot set headers after they are sent to the client
 20220404	21:46:05	2049e44b-c710-4cc8-b6d6-ede2d4407218	ReferenceError: setEmployee is not defined
+20220406	20:35:52	1d25e85f-2256-4507-ad00-03bd56621d78	Error: "expireIn" is not allowed in "options"
+20220406	20:37:03	f98b2259-07d2-4d1a-af3e-0b40f0099f99	Error: "expireIn" is not allowed in "options"
+20220407	14:40:48	d3b022f5-6798-40c5-92cd-f3d91e768eea	TypeError: authHeader?.startWith is not a function
+20220407	15:02:33	170e96d1-16e7-4dd5-8676-1df820b65cdb	ReferenceError: rolesArray is not defined
+20220407	15:03:43	d1460a2b-eb5e-44ba-b55a-472f0bd1d032	TypeError: rolesArray.includes(...).find is not a function
+20220407	15:12:36	d1a48aa1-b0ef-4a94-90a8-09218770d105	Error: Cannot set headers after they are sent to the client
+20220407	15:24:05	343a64a9-aa48-4f3e-9f8f-162e209493f1	Error: Cannot set headers after they are sent to the client
+20220407	15:27:23	f3b795c9-fb2b-4e9f-a6ba-e512f76e0728	Error: Cannot set headers after they are sent to the client
+20220407	20:03:09	0965bdef-9e1a-465c-9160-d6460ffeffb6	Error: Cannot set headers after they are sent to the client
+20220407	20:21:45	252944ed-2ab3-4147-9f5f-8a5d6191972b	Error: Cannot set headers after they are sent to the client
+20220408	22:23:36	829ca39c-a57d-4e94-ba98-0ce4ddf426c1	SyntaxError: Unexpected token e in JSON at position 6
